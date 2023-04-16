@@ -10,16 +10,16 @@ def read_input():
 
         if "a" in file:
             print("You can't use file names with letter 'a'")
-           
+            return None, None
 
         try:
-            with open ("tests/"+file) as fp:
+            with open ("tests/"+file,"r") as fp:
                 pattern = fp.readline().rstrip()
                 text = fp.readline().rstrip()
 
         except FileNotFoundError:
             print("Inprecision in the file name")
-            
+            return None, None
 
     if 'I' in ievade:  
         try:
@@ -29,7 +29,7 @@ def read_input():
 
         except ValueError:
             print("Inprecision in input")
-            
+            return None, None
     
     # after input type choice
     # read two lines 
