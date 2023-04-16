@@ -6,20 +6,10 @@ def read_input():
     # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
     ievade = input().rstrip()
     if 'F' in ievade:
-        file = input().rstrip()
-
-        if "a" in file:
-            print("You can't use file names with letter 'a'")
-            return None, None
-
-        try:
-            with open ("tests/"+file,"r") as fp:
-                pattern = fp.readline().rstrip()
-                text = fp.readline().rstrip()
-
-        except FileNotFoundError:
-            print("Inprecision in the file name")
-            return None, None
+      
+        with open ("tests/06") as fp:
+            pattern = fp.readline().rstrip()
+            text = fp.readline().rstrip()
 
     if 'I' in ievade:  
         try:
@@ -29,7 +19,7 @@ def read_input():
 
         except ValueError:
             print("Inprecision in input")
-            return None, None
+            
     
     # after input type choice
     # read two lines 
